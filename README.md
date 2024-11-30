@@ -48,6 +48,7 @@ To build the Docker image for the SES-Automation Tool, execute the following com
 docker-compose run --rm app composer install
 docker-compose exec app php artisan key:generate
 docker-compose run --rm app chmod -R 777 storage bootstrap/cache
+docker-compose exec app php artisan migrate
 docker-compose up --build -d
 docker-compose up -d
 docker-compose down
